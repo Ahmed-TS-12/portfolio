@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Site Statique</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset & Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #054691, #054691); /* Bleu adouci */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+        header h1 {
+            font-size: 2rem;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+        }
+        header nav ul li {
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        header nav ul li a:hover {
+            color: #FFC107; /* Couleur dorée */
+        }
+        main {
+            text-align: left;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        main h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #054691;
+        }
+        main p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        main ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        main ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        main ul li a {
+            text-decoration: none;
+            color: #054691;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        main ul li a:hover {
+            color: #FFC107; /* Couleur dorée */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #054691; /* Bleu clair pour correspondre */
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FFC107;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .theme-toggle:hover {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mes Projets</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="activite.html">Activités</a></li>
+                <li><a href="projet.html">Projets</a></li> <!-- Projets page link -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Projets réalisés</h2>
+            <p>Voici une sélection des projets sur lesquels j'ai travaillé :</p>
+            <ul>
+                <li><strong>Développement mobile :</strong> Application Android utilisant Retrofit et RecyclerView pour gérer les données utilisateurs.</li>
+                <li><strong>IoT et Systèmes embarqués :</strong> Création de solutions IoT utilisant des plateformes comme ESP32, Arduino et Raspberry Pi pour automatiser des environnements.</li>
+                <li><strong>Développement Web :</strong> Conception de sites web statiques et dynamiques pour des clients divers, avec une attention particulière à l'UX/UI.</li>
+                <li><strong>Intelligence Artificielle :</strong> Développement d'algorithmes IA pour des projets de reconnaissance d'objets et d'automatisation.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Réalisé par Ahmed Trabelssi</p>
+    </footer>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    <script>
+        const toggleButton = document.getElementById('themeToggle');
+        let isDark = false;
+
+        toggleButton.addEventListener('click', () => {
+            isDark = !isDark;
+            if (isDark) {
+                document.body.style.backgroundColor = '#222';
+                document.body.style.color = '#fff';
+                toggleButton.textContent = '☀️';
+            } else {
+                document.body.style.backgroundColor = '#f4f4f4';
+                document.body.style.color = '#000';
+                toggleButton.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
